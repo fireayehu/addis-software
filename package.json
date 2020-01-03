@@ -2,9 +2,13 @@
   "name": "addis-softwares",
   "version": "1.0.0",
   "description": "",
+  "homepage": "https://CapFere.github.io/addis-softwares",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "webpack-dev-server"
+    "start": "webpack-dev-server",
+    "build": "webpack --mode=production",
+    "predeploy": "npm run bulid",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +24,7 @@
     "@types/reselect": "^2.2.0",
     "@types/styled-components": "^4.4.1",
     "@types/styled-system": "^5.1.4",
+    "gh-pages": "^2.1.1",
     "react": "^16.12.0",
     "react-confirm-alert": "^2.4.1",
     "react-dom": "^16.12.0",
