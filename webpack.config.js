@@ -16,16 +16,25 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.(jpg|png|jpeg)$/,
+        use: {
+          loader: "url-loader",
+          options: {
+            name: "[name].[ext]",
+            useRelativePath: true
+          }
+        }
       }
     ]
   },
   resolve: {
-    extensions: [".js", ".ts", ".tsx"]
+    extensions: ["*", ".js", ".ts", ".tsx"]
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public/index.html")
     })
-  ],
-  mode: "development"
+  ]
 };
